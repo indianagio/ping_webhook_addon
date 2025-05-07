@@ -10,7 +10,6 @@ arch:
   - armv7
 init: false
 panel_icon: mdi:wan
-apparmor: false
 healthcheck: "pgrep -f ping_webhook.py > /dev/null"
 options:
   interval: 5
