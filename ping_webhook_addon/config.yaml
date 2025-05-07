@@ -1,5 +1,5 @@
 name: Ping and Webhook
-version: "1.0.0"
+version: "1.0.2"
 slug: ping_webhook
 description: Pings 8.8.8.8 and sends latency + external IP to a webhook URL every X seconds
 startup: services
