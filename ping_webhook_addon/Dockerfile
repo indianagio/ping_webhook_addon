@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/{arch}-base-python:3.12
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:latest
 FROM ${BUILD_FROM}
 
 RUN apk add --no-cache iputils curl
