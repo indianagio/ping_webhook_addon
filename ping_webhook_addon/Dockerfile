@@ -1,7 +1,7 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:latest
+ARG BUILD_FROM=ghcr.io/home-assistant/{arch}-base:latest
 FROM ${BUILD_FROM}
 
-RUN apk add --no-cache iputils curl
+RUN apk add --no-cache iputils curl py3-requests
 
 COPY run.sh /
 COPY ping_webhook.py /
