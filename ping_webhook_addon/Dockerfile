@@ -6,4 +6,5 @@ RUN apk add --no-cache iputils curl py3-requests
 COPY run.sh /
 COPY ping_webhook.py /
 
+RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
