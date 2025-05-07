@@ -1,0 +1,18 @@
+name: Ping and Webhook
+version: "1.0.0"
+slug: ping_webhook
+description: Pings 8.8.8.8 and sends latency + external IP to a webhook URL every X seconds
+startup: services
+boot: auto
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+panel_icon: mdi:wan
+options:
+  interval: 5
+  webhook_url: "http://192.168.1.47:3000/ha-webhook"
+schema:
+  interval: int(1,)
+  webhook_url: url
