@@ -1,14 +1,10 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ghcr.io/hassio-addons/base-python:12.2.7
 
-ENV LANG C.UTF-8
+# Install ping + curl (sono già dentro ma assicuriamoci)
+RUN apk add --no-cache iputils curl
 
-RUN apk add --no-cache python3 py3-pip curl iputils
-
+# Copy files
 COPY run.sh /
 COPY ping_webhook.py /
-COPY requirements.txt /
-
-RUN pip3 install -r /requirements.txt
 
 CMD [ "/run.sh" ]
