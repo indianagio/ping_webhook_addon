@@ -1,7 +1,7 @@
 name: Ping and Webhook
-version: "1.0.2"
+version: "1.1.0"
 slug: ping_webhook
-description: Pings 8.8.8.8 and sends latency + external IP to a webhook URL every X seconds
+description: Pings 8.8.8.8 and sends latency + external IP to a webhook URL every X seconds.
 startup: services
 boot: auto
 arch:
@@ -10,6 +10,8 @@ arch:
   - armv7
 init: false
 panel_icon: mdi:wan
+apparmor: false
+healthcheck: "pgrep -f ping_webhook.py > /dev/null"
 options:
   interval: 5
   webhook_url: "http://192.168.1.47:3000/ha-webhook"
